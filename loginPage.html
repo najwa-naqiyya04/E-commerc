@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Login Page</title>
+    <meta name="description" content="Responsive login page with Tailwind CSS" />
+
+    <link rel="stylesheet" href="src/output.css">
+</head>
+
+<body class="font-sans">
+
+    <main class="min-h-screen">
+
+        <!-- ===== DESKTOP LAYOUT ===== -->
+        <section class="hidden lg:grid grid-cols-2 min-h-screen">
+
+            <!-- LEFT SHAPE AREA -->
+            <div class="relative bg-white overflow-hidden">
+                <img src="asset/Group 23.png" alt="left background shape"
+                    class="absolute top-0 right-7 -translate-y-25 w-[140%] max-w-none" />
+            </div>
+
+
+            <!-- RIGHT FORM -->
+            <div class="flex items-center justify-center">
+                <div class="w-full max-w-md px-6">
+
+                    <h1 class="text-2xl font-semibold mb-6">
+                        login to your account
+                    </h1>
+
+                    <form class="space-y-4">
+                        <input type="email" placeholder="email"
+                            class="w-full bg-teal-800 text-white px-4 py-3 rounded-lg placeholder-gray-300 focus:outline-none" />
+
+                        <input type="password" placeholder="password"
+                            class="w-full bg-teal-800 text-white px-4 py-3 rounded-lg placeholder-gray-300 focus:outline-none" />
+                        <a href="landingPage.html"
+                            class="block w-full text-center bg-orange-400 py-3 rounded-lg text-white font-medium">
+                            Sign In
+                        </a>
+                    </form>
+
+                    <p class="text-center text-sm text-gray-400 my-6">
+                        -or login with-
+                    </p>
+
+                    <div class="flex justify-center gap-4">
+                        <button class="bg-white shadow p-3 rounded-xl">
+                            <img src="asset/Google__G__logo.svg.png" class="w-6" alt="logo google">
+                        </button>
+                        <button class="bg-white shadow p-3 rounded-xl">
+                            <img src="asset/Facebook_f_logo_(2019).svg.webp" class="w-6" alt="logo facebook">
+                        </button>
+                        <button class="bg-white shadow p-3 rounded-xl">
+                            <img src="asset/Apple_logo_black.svg" class="w-6" alt="logo apple">
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== MOBILE LAYOUT ===== -->
+        <section class="lg:hidden min-h-screen bg-teal-800 flex flex-col items-center justify-center px-6">
+
+            <img src="asset/Group 14.png" alt="illustration" class="w-40 mb-6">
+
+            <div class=" max-w-sm rounded-2xl p-6">
+                <h1 class="text-white text-center text-xl font-semibold mb-4">
+                    login to your account
+                </h1>
+
+                <form class="space-y-4">
+                    <input type="email" placeholder="email" class="bg-white w-full border px-4 py-3 rounded-lg" />
+                    <input type="password" placeholder="password" class="bg-white w-full border px-4 py-3 rounded-lg" />
+                    <a href="landingPage.html"
+                        class="block w-full text-center bg-orange-400 py-3 rounded-lg text-white font-medium">
+                        Sign In
+                    </a>
+
+                </form>
+
+                <p class="text-center text-sm text-gray-400 my-4">
+                    -or login with-
+                </p>
+
+                <div class="flex justify-center gap-4">
+                    <img src="asset/Google__G__logo.svg.png" class="w-6 cursor-pointer" alt="logo google">
+                    <img src="asset/Facebook_f_logo_(2019).svg.webp" class="w-6 cursor-pointer" alt="logo fecaebook">
+                    <img src="asset/Apple_logo_black.svg" class="w-6 cursor-pointer" alt="logo apple">
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+</body>
+
+</html>

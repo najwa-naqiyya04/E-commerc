@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tip Top</title>
+  <link rel="stylesheet" href="src/output.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="bg-teal-900 text-white fixed top-0 left-0 w-full z-50 shadow-md">
+    <nav class="container mx-auto px-6 py-4 flex items-center justify-between">
+
+      <!-- LEFT -->
+      <div class="flex items-center gap-6">
+
+        <!-- HAMBURGER -->
+        <button id="openSidebar" class="text-2xl">
+          <i class="ri-menu-line"></i>
+        </button>
+
+        <!-- LOGO ke cart-->
+        <a href="landingPage.html" class="flex items-center gap-2 font-bold text-xl hover:text-lime-300 transition">
+          <i class="ri-shopping-cart-line"></i>
+          <span>Tip Top</span>
+        </a>
+
+      </div>
+
+      <!-- SEARCH + INFO (DESKTOP) -->
+      <div class="hidden md:flex items-center gap-6 ml-8">
+
+        <!-- SEARCH -->
+        <div class="relative w-[600px]">
+          <input type="text" placeholder="Search for Grocery, Stores, Vegetable or Meat"
+            class="w-full rounded-full bg-white px-5 py-2 text-sm text-gray-700 focus:outline-none" />
+          <i class="ri-search-line absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+        </div>
+
+        <!-- FLASH ICON -->
+        <a href="loginPage.html"
+          class="flex items-center gap-2 text-sm text-lime-400 hover:text-lime-300 transition whitespace-nowrap">
+
+          <i class="ri-flashlight-line"></i>
+          <span>
+            Order now and get it within <strong>15 min!</strong>
+          </span>
+
+        </a>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="flex items-center gap-6 text-xl">
+
+        <!-- CART -->
+        <a href="cart.html" id="navbar-cart" class="relative hover:text-lime-400 transition">
+          <i class="ri-shopping-bag-line"></i>
+          <span class="absolute -top-2 -right-2 bg-lime-400 text-teal-900 text-xs
+          w-5 h-5 flex items-center justify-center rounded-full">
+            2
+          </span>
+        </a>
+
+        <!-- USER -->
+        <a href="loginPage.html" class="hover:text-lime-400 transition">
+          <i class="ri-user-3-line"></i>
+        </a>
+
+      </div>
+
+    </nav>
+  </header>
+
+
+  <!-- OVERLAY -->
+  <div id="overlay" class="fixed inset-0 bg-black/40 hidden z-40"></div>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar" class="fixed top-0 left-0 h-full w-72 bg-white text-gray-800
+         -translate-x-full transition-transform duration-300 z-50">
+    <div class="flex items-center justify-between px-6 py-4 border-b">
+      <h2 class="font-bold text-lg">Categories</h2>
+      <button id="closeSidebar" class="text-xl">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+
+    <ul class="px-6 py-4 space-y-4 text-sm">
+      <a href="shop-all.html">
+        <li class="hover:text-teal-700 cursor-pointer">Shop all</li>
+      </a>
+      <li class="hover:text-teal-700 cursor-pointer">Electronic</li>
+      <li class="hover:text-teal-700 cursor-pointer">Fashion</li>
+      <li class="hover:text-teal-700 cursor-pointer">Luxury</li>
+      <li class="hover:text-teal-700 cursor-pointer">Home Decor</li>
+      <li class="hover:text-teal-700 cursor-pointer">Health n Beauty</li>
+      <li class="hover:text-teal-700 cursor-pointer">Groceries</li>
+      <li class="hover:text-teal-700 cursor-pointer">Snacker</li>
+    </ul>
+  </aside>
+
+  <!-- hero section -->
+  <section class="relative bg-teal-800 overflow-hidden">
+
+    <!-- CONTENT -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 pt-24 pb-40 grid md:grid-cols-2 gap-10 items-center">
+
+      <!-- TEXT -->
+      <div class="sr-hero-text">
+        <h1 class="sr-hero-text text-white text-4xl md:text-5xl font-bold leading-tight">
+          We bring the store <br /> to your door
+        </h1>
+
+        <p class="text-teal-100 mt-4 max-w-md">
+          Get organic produce and sustainably sourced groceries delivered at up to
+          <span class="font-semibold text-white">40% off.</span>
+        </p>
+
+        <button
+          class="mt-8 inline-flex items-center gap-2 bg-lime-400 hover:bg-lime-300 text-teal-900 font-semibold px-6 py-3 rounded-full transition">
+          Shop now →
+        </button>
+      </div>
+
+      <!-- EMPTY (BIAR GRID SEIMBANG DI DESKTOP) -->
+      <div></div>
+    </div>
+
+    <!-- IMAGE (LEPAS DARI FLOW) -->
+    <img src="asset/belanjaan.png" alt="Grocery Bag" class="sr-hero-img absolute -bottom-10 lg:-bottom-16 right-10 lg:right-50 
+         w-[300px] lg:w-[450px]   
+         z-0 pointer-events-none drop-shadow-2xl sr-hero-img" />
+
+
+  </section>
+
+
+  <!-- SHOP BY CATEGORY -->
+  <section class="max-w-7xl mx-auto px-4 py-8" aria-labelledby="category-title">
+
+    <!-- HEADER -->
+    <header class="flex items-center justify-between mb-6">
+      <h2 id="category-title" class="text-xl font-semibold">
+        Explore Popular Categories
+      </h2>
+
+      <a href="#" class="text-sm text-blue-600 hover:underline" aria-label="View all product categories">
+        View All
+      </a>
+    </header>
+
+    <!-- CATEGORY LIST -->
+    <ul class="
+      flex gap-4 overflow-x-auto pb-2
+      snap-x snap-mandatory
+      md:grid md:grid-cols-7 md:gap-6
+      md:overflow-visible no-scrollbar
+    " role="list">
+
+      <!-- CATEGORY ITEM -->
+      <li class="snap-center min-w-[90px] md:min-w-0 text-center">
+        <a href="#" class="flex flex-col items-center gap-2" aria-label="Browse electronics products">
+          <div class="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center">
+            <img src="asset/headset.png" alt="Electronics products category" class="w-12 h-12 object-contain"
+              loading="lazy" width="48" height="48">
+          </div>
+          <span class="text-sm">Electronics</span>
+        </a>
+      </li>
+
+      <li class="snap-center min-w-[90px] md:min-w-0 text-center">
+        <a href="#" class="flex flex-col items-center gap-2" aria-label="Browse fashion products">
+          <div class="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center">
+            <img src="asset/fasion-removebg-preview.png" alt="Fashion clothing and accessories category"
+              class="w-12 h-12 object-contain" loading="lazy" width="48" height="48">
+          </div>
+          <span class="text-sm">Fashion</span>
+        </a>
+      </li>
+
+      <li class="snap-center min-w-[90px] md:min-w-0 text-center">
+        <a href="#" class="flex flex-col items-center gap-2" aria-label="Browse luxury products">
+          <div class="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center">
+            <img src="asset/luxury.png" alt="Luxury lifestyle products category" class="w-12 h-12 object-contain"
+              loading="lazy" width="48" height="48">
+          </div>
+          <span class="text-sm">Luxury</span>
+        </a>
+      </li>
+
+      <li class="snap-center min-w-[90px] md:min-w-0 text-center">
+        <a href="#" class="flex flex-col items-center gap-2" aria-label="Browse home decor products">
+          <div class="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center">
+            <img src="asset/funiture.png" alt="Home decor and furniture category" class="w-12 h-12 object-contain"
+              loading="lazy" width="48" height="48">
+          </div>
+          <span class="text-sm">Home Decor</span>
+        </a>
+      </li>
+
+      <li class="snap-center min-w-[90px] md:min-w-0 text-center">
+        <a href="#" class="flex flex-col items-center gap-2" aria-label="Browse health and beauty products">
+          <div class="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center">
+            <img src="asset/healty.png" alt="Health and beauty care products category" class="w-12 h-12 object-contain"
+              loading="lazy" width="48" height="48">
+          </div>
+          <span class="text-sm">Health &amp; Beauty</span>
+        </a>
+      </li>
+
+      <li class="snap-center min-w-[90px] md:min-w-0 text-center">
+        <a href="#" class="flex flex-col items-center gap-2" aria-label="Browse grocery products">
+          <div class="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center">
+            <img src="asset/sayuran.png" alt="Fresh groceries and vegetables category" class="w-12 h-12 object-contain"
+              loading="lazy" width="48" height="48">
+          </div>
+          <span class="text-sm">Groceries</span>
+        </a>
+      </li>
+
+      <li class="snap-center min-w-[90px] md:min-w-0 text-center">
+        <a href="#" class="flex flex-col items-center gap-2" aria-label="Browse sneakers products">
+          <div class="w-20 h-20 rounded-full bg-gray-100 flex items-center justify-center">
+            <img src="asset/sepatu.png" alt="Sneakers and footwear category" class="w-12 h-12 object-contain"
+              loading="lazy" width="48" height="48">
+          </div>
+          <span class="text-sm">Sneakers</span>
+        </a>
+      </li>
+
+    </ul>
+  </section>
+
+
+  <!-- PROMOTIONAL BANNERS -->
+  <section class="max-w-7xl mx-auto px-4 py-6" aria-labelledby="promo-title">
+
+    <!-- PROMO LIST -->
+    <div class="
+      sr-banner
+      flex gap-4 overflow-x-auto snap-x snap-mandatory
+      md:grid md:grid-cols-3 md:grid-rows-2 md:h-[360px]
+      md:overflow-visible no-scrollbar
+    " role="list" aria-label="Current promotional offers">
+
+      <!-- PROMO ITEM -->
+      <article class="
+        min-w-[80%] h-[140px] snap-center
+        md:min-w-0 md:h-auto
+        md:row-span-2
+        rounded-xl overflow-hidden
+      " role="listitem" aria-label="Special discount promotion">
+        <img src="asset/promo-banner.jpg" alt="Special discount promotion on selected products"
+          class="w-full h-full object-cover" loading="lazy" width="600" height="360">
+      </article>
+
+      <article class="
+        min-w-[80%] h-[120px] snap-center
+        md:min-w-0 md:h-auto
+        rounded-xl overflow-hidden
+      " role="listitem" aria-label="Limited time promotional offer">
+        <img src="asset/promo-banner.jpg" alt="Limited time promotional offer with exclusive deals"
+          class="w-full h-full object-cover" loading="lazy" width="600" height="240">
+      </article>
+
+      <article class="
+        min-w-[80%] h-[140px] snap-center
+        md:min-w-0 md:h-auto
+        md:row-span-2
+        rounded-xl overflow-hidden
+      " role="listitem" aria-label="Seasonal promotion">
+        <img src="asset/promo-banner.jpg" alt="Seasonal promotion with special prices"
+          class="w-full h-full object-cover" loading="lazy" width="600" height="360">
+      </article>
+
+      <article class="
+        min-w-[80%] h-[120px] snap-center
+        md:min-w-0 md:h-auto
+        rounded-xl overflow-hidden
+      " role="listitem" aria-label="Exclusive online promotion">
+        <img src="asset/promo-banner.jpg" alt="Exclusive online promotion available today"
+          class="w-full h-full object-cover" loading="lazy" width="600" height="240">
+      </article>
+
+    </div>
+  </section>
+
+
+  <!-- best mingguan -->
+  <section class="bg-teal-800 px-6 py-10 min-h-screen">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- HEADER -->
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <h2 class="text-white text-xl font-semibold">
+          Weekly Best Deals
+        </h2>
+
+        <div class="flex items-center gap-2 text-white text-sm">
+          <span>Limited time only</span>
+          <span class="bg-red-500 px-2 py-1 rounded">02</span> :
+          <span class="bg-red-500 px-2 py-1 rounded">35</span> :
+          <span class="bg-red-500 px-2 py-1 rounded">40</span>
+        </div>
+      </div>
+
+      <!-- FILTER -->
+      <div class="flex gap-3 mt-6 overflow-x-auto pb-2 no-scrollbar">
+        <button class="bg-orange-400 text-white px-4 py-2 rounded-full text-sm whitespace-nowrap">
+          Almost Sold Out
+        </button>
+        <button class="chip">Beauty & Health</button>
+        <button class="chip">Home & Kitchen</button>
+        <button class="chip">Men's Clothing</button>
+        <button class="chip">Sports & Outdoor</button>
+      </div>
+
+      <!-- MOBILE SCROLL (NO SWIPER) -->
+      <div class="flex gap-4 overflow-x-auto lg:hidden pb-4 no-scrollbar">
+
+        <!-- CARD -->
+        <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+          <!-- IMAGE -->
+          <a href="#">
+            <img src="asset/mackbook.png" alt="" class="h-40 mx-auto object-contain">
+          </a>
+
+          <!-- TITLE -->
+          <h3 class="text-sm mt-4 line-clamp-2">
+            heaadset bagus pake pakeee
+          </h3>
+
+          <!-- BRAND -->
+          <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+            <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+            BY TIP TOP
+          </div>
+
+          <!-- PRICE -->
+          <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+          <!-- ACTION AREA -->
+          <div class="relative mt-3 h-10 overflow-hidden">
+
+            <!-- RATING -->
+            <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+            </div>
+
+            <!-- BUTTON -->
+            <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+              + ADD TO CART
+            </button>
+
+          </div>
+
+
+        </div>
+        <!-- CARD -->
+        <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+          <!-- IMAGE -->
+          <a href="#">
+            <img src="asset/apple.png" alt="" class="h-40 mx-auto object-contain">
+          </a>
+
+          <!-- TITLE -->
+          <h3 class="text-sm mt-4 line-clamp-2">
+            heaadset bagus pake pakeee
+          </h3>
+
+          <!-- BRAND -->
+          <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+            <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+            BY TIP TOP
+          </div>
+
+          <!-- PRICE -->
+          <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+          <!-- ACTION AREA -->
+          <div class="relative mt-3 h-10 overflow-hidden">
+
+            <!-- RATING -->
+            <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+            </div>
+
+            <!-- BUTTON -->
+            <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+              + ADD TO CART
+            </button>
+
+          </div>
+
+
+        </div>
+        <!-- CARD -->
+        <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+          <!-- IMAGE -->
+          <a href="#">
+            <img src="asset/baju.png" alt="" class="h-40 mx-auto object-contain">
+          </a>
+
+          <!-- TITLE -->
+          <h3 class="text-sm mt-4 line-clamp-2">
+            heaadset bagus pake pakeee
+          </h3>
+
+          <!-- BRAND -->
+          <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+            <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+            BY TIP TOP
+          </div>
+
+          <!-- PRICE -->
+          <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+          <!-- ACTION AREA -->
+          <div class="relative mt-3 h-10 overflow-hidden">
+
+            <!-- RATING -->
+            <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+            </div>
+
+            <!-- BUTTON -->
+            <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+              + ADD TO CART
+            </button>
+
+          </div>
+
+
+        </div>
+        <!-- CARD -->
+        <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+          <!-- IMAGE -->
+          <a href="#">
+            <img src="asset/sofa.png" alt="" class="h-40 mx-auto object-contain">
+          </a>
+
+          <!-- TITLE -->
+          <h3 class="text-sm mt-4 line-clamp-2">
+            heaadset bagus pake pakeee
+          </h3>
+
+          <!-- BRAND -->
+          <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+            <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+            BY TIP TOP
+          </div>
+
+          <!-- PRICE -->
+          <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+          <!-- ACTION AREA -->
+          <div class="relative mt-3 h-10 overflow-hidden">
+
+            <!-- RATING -->
+            <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+            </div>
+
+            <!-- BUTTON -->
+            <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+              + ADD TO CART
+            </button>
+
+          </div>
+
+
+        </div>
+        <!-- CARD -->
+        <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+          <!-- IMAGE -->
+          <a href="#">
+            <img src="asset/ipad.png" alt="" class="h-40 mx-auto object-contain">
+          </a>
+
+          <!-- TITLE -->
+          <h3 class="text-sm mt-4 line-clamp-2">
+            heaadset bagus pake pakeee
+          </h3>
+
+          <!-- BRAND -->
+          <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+            <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+            BY TIP TOP
+          </div>
+
+          <!-- PRICE -->
+          <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+          <!-- ACTION AREA -->
+          <div class="relative mt-3 h-10 overflow-hidden">
+
+            <!-- RATING -->
+            <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+            </div>
+
+            <!-- BUTTON -->
+            <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+              + ADD TO CART
+            </button>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+    </div>
+    <div>
+      <!-- DESKTOP PRODUCT GRID -->
+      <div class="hidden lg:grid grid-cols-4 gap-5 mt-8 ">
+
+        <!-- CARD -->
+        <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+          <!-- IMAGE -->
+          <a href="#">
+            <img src="asset/mackbook.png" alt="" class="h-40 mx-auto object-contain">
+          </a>
+
+          <!-- TITLE -->
+          <h3 class="text-sm mt-4 line-clamp-2">
+            heaadset bagus pake pakeee
+          </h3>
+
+          <!-- BRAND -->
+          <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+            <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+            BY TIP TOP
+          </div>
+
+          <!-- PRICE -->
+          <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+          <!-- ACTION AREA -->
+          <div class="relative mt-3 h-10 overflow-hidden">
+
+            <!-- RATING -->
+            <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+            </div>
+
+            <!-- BUTTON -->
+            <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+              + ADD TO CART
+            </button>
+
+          </div>
+
+
+        </div>
+
+        <!-- CARD -->
+        <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+          <!-- IMAGE -->
+          <a href="#">
+            <img src="asset/apple.png" alt="" class="h-40 mx-auto object-contain">
+          </a>
+
+          <!-- TITLE -->
+          <h3 class="text-sm mt-4 line-clamp-2">
+            heaadset bagus pake pakeee
+          </h3>
+
+          <!-- BRAND -->
+          <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+            <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+            BY TIP TOP
+          </div>
+
+          <!-- PRICE -->
+          <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+          <!-- ACTION AREA -->
+          <div class="relative mt-3 h-10 overflow-hidden">
+
+            <!-- RATING -->
+            <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+            </div>
+
+            <!-- BUTTON -->
+            <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+              + ADD TO CART
+            </button>
+
+          </div>
+
+
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+          <!-- IMAGE -->
+          <a href="#">
+            <img src="asset/baju.png" alt="" class="h-40 mx-auto object-contain">
+          </a>
+
+          <!-- TITLE -->
+          <h3 class="text-sm mt-4 line-clamp-2">
+            heaadset bagus pake pakeee
+          </h3>
+
+          <!-- BRAND -->
+          <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+            <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+            BY TIP TOP
+          </div>
+
+          <!-- PRICE -->
+          <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+          <!-- ACTION AREA -->
+          <div class="relative mt-3 h-10 overflow-hidden">
+
+            <!-- RATING -->
+            <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+            </div>
+
+            <!-- BUTTON -->
+            <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+              + ADD TO CART
+            </button>
+
+          </div>
+
+
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+          <!-- IMAGE -->
+          <a href="#">
+            <img src="asset/ipad.png" alt="" class="h-40 mx-auto object-contain">
+          </a>
+
+          <!-- TITLE -->
+          <h3 class="text-sm mt-4 line-clamp-2">
+            heaadset bagus pake pakeee
+          </h3>
+
+          <!-- BRAND -->
+          <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+            <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+            BY TIP TOP
+          </div>
+
+          <!-- PRICE -->
+          <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+          <!-- ACTION AREA -->
+          <div class="relative mt-3 h-10 overflow-hidden">
+
+            <!-- RATING -->
+            <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+              <i class="ri-star-fill text-yellow-400"></i>
+            </div>
+
+            <!-- BUTTON -->
+            <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+              + ADD TO CART
+            </button>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+      <!-- BANNER BOTTOM -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+
+        <div class="bg-[#e8f6f3] rounded-xl p-6">
+          <h3 class="font-semibold text-lg">Fitness for Smart</h3>
+          <p class="text-sm mt-2">Special Offer</p>
+          <button class="mt-4 bg-emerald-700 text-white px-4 py-2 rounded-full text-sm">
+            Shop Now
+          </button>
+        </div>
+
+        <div class="bg-[#fff3d6] rounded-xl p-6">
+          <h3 class="font-semibold text-lg">Men’s Fashion</h3>
+          <p class="text-sm mt-2">From $29.99</p>
+          <button class="mt-4 bg-orange-400 text-white px-4 py-2 rounded-full text-sm">
+            Shop Now
+          </button>
+        </div>
+
+        <div class="bg-[#eaf4ff] rounded-xl p-6">
+          <h3 class="font-semibold text-lg">Felly Fan Offer</h3>
+          <p class="text-sm mt-2">From $12.99</p>
+          <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-full text-sm">
+            Shop Now
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROMO BANNER TOP -->
+  <section class="max-w-7xl mx-auto px-6 py-10">
+
+    <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r
+              from-teal-500 via-teal-400 to-emerald-300
+              min-h-[180px] md:min-h-[220px]">
+
+      <!-- CONTENT -->
+      <div class="relative z-10 grid md:grid-cols-2 items-center h-full px-6 md:px-12">
+
+        <!-- TEXT -->
+        <div class="text-white py-8">
+          <h2 class="text-2xl md:text-3xl font-bold leading-tight">
+            AMAZFIT SMARTWATCH
+          </h2>
+
+          <p class="text-sm md:text-base opacity-90 mt-2 max-w-md">
+            Upgrade your wellbeing with a feature-packed smartwatch
+          </p>
+
+          <button class="mt-5 bg-white text-teal-700 text-sm font-semibold
+                 px-5 py-2 rounded-full hover:bg-gray-100 transition">
+            Shop Now
+          </button>
+        </div>
+
+        <!-- IMAGE -->
+        <div class="hidden lg:flex justify-end">
+          <img src="asset/promo2.png" alt="Smartwatch" class="h-[200px] object-contain">
+        </div>
+
+      </div>
+
+      <!-- DECORATIVE SHAPE -->
+      <div class="absolute -right-20 -top-20 w-72 h-72 bg-white/10 rounded-full"></div>
+      <div class="absolute right-10 bottom-0 w-40 h-40 bg-white/10 rounded-full"></div>
+
+    </div>
+
+  </section>
+
+  <!-- electronic promo -->
+  <section class="max-w-7xl mx-auto px-6 py-10 min-h-screen">
+
+    <!-- TAB HEADER -->
+    <div class="flex justify-center gap-6 mb-8 text-sm font-medium">
+      <button class="text-gray-500 hover:text-teal-700">New Arrivals</button>
+      <button class="text-teal-700 border-b-2 border-teal-700 pb-1">Best Seller</button>
+      <button class="text-gray-500 hover:text-teal-700">Best Offers</button>
+    </div>
+
+    <!-- GRID -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+
+      <!-- LEFT PROMO BANNER -->
+      <div class="md:row-span-2 bg-black rounded-xl overflow-hidden relative">
+        <img src="asset/iphone17.jpeg" alt="" class="w-full h-full object-cover opacity-90" />
+
+        <div class="absolute inset-0 p-6 flex flex-col justify-end text-white">
+          <span class="text-xs mb-2 opacity-80">Limited time only!</span>
+
+          <div class="flex gap-2 text-xs mb-3">
+            <span class="bg-white/20 px-2 py-1 rounded">20</span>
+            <span class="bg-white/20 px-2 py-1 rounded">45</span>
+            <span class="bg-white/20 px-2 py-1 rounded">09</span>
+          </div>
+
+          <h3 class="text-lg font-semibold mb-1">Sneaker Fest 2024</h3>
+          <p class="text-xs mb-4 opacity-80">
+            Up to 40% off Women Sneakers
+          </p>
+
+          <button
+            class="bg-yellow-400 text-black text-sm font-semibold py-2 rounded-full hover:bg-yellow-300 transition">
+            Shop Now
+          </button>
+        </div>
+      </div>
+
+      <!-- CARD -->
+      <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+        <!-- IMAGE -->
+        <a href="#">
+          <img src="asset/ipad.png" alt="" class="h-40 mx-auto object-contain">
+        </a>
+
+        <!-- TITLE -->
+        <h3 class="text-sm mt-4 line-clamp-2">
+          heaadset bagus pake pakeee
+        </h3>
+
+        <!-- BRAND -->
+        <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+          <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+          BY TIP TOP
+        </div>
+
+        <!-- PRICE -->
+        <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+        <!-- ACTION AREA -->
+        <div class="relative mt-3 h-10 overflow-hidden">
+
+          <!-- RATING -->
+          <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+          </div>
+
+          <!-- BUTTON -->
+          <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+            + ADD TO CART
+          </button>
+
+        </div>
+
+
+      </div>
+      <!-- CARD -->
+      <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+        <!-- IMAGE -->
+        <a href="#">
+          <img src="asset/apple.png" alt="" class="h-40 mx-auto object-contain">
+        </a>
+
+        <!-- TITLE -->
+        <h3 class="text-sm mt-4 line-clamp-2">
+          heaadset bagus pake pakeee
+        </h3>
+
+        <!-- BRAND -->
+        <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+          <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+          BY TIP TOP
+        </div>
+
+        <!-- PRICE -->
+        <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+        <!-- ACTION AREA -->
+        <div class="relative mt-3 h-10 overflow-hidden">
+
+          <!-- RATING -->
+          <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+          </div>
+
+          <!-- BUTTON -->
+          <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+            + ADD TO CART
+          </button>
+
+        </div>
+
+
+      </div>
+      <!-- CARD -->
+      <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+        <!-- IMAGE -->
+        <a href="#">
+          <img src="asset/mackbook.png" alt="" class="h-40 mx-auto object-contain">
+        </a>
+
+        <!-- TITLE -->
+        <h3 class="text-sm mt-4 line-clamp-2">
+          heaadset bagus pake pakeee
+        </h3>
+
+        <!-- BRAND -->
+        <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+          <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+          BY TIP TOP
+        </div>
+
+        <!-- PRICE -->
+        <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+        <!-- ACTION AREA -->
+        <div class="relative mt-3 h-10 overflow-hidden">
+
+          <!-- RATING -->
+          <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+          </div>
+
+          <!-- BUTTON -->
+          <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+            + ADD TO CART
+          </button>
+
+        </div>
+
+
+      </div>
+      <!-- CARD -->
+      <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+        <!-- IMAGE -->
+        <a href="#">
+          <img src="asset/15.png" alt="" class="h-40 mx-auto object-contain">
+        </a>
+
+        <!-- TITLE -->
+        <h3 class="text-sm mt-4 line-clamp-2">
+          heaadset bagus pake pakeee
+        </h3>
+
+        <!-- BRAND -->
+        <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+          <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+          BY TIP TOP
+        </div>
+
+        <!-- PRICE -->
+        <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+        <!-- ACTION AREA -->
+        <div class="relative mt-3 h-10 overflow-hidden">
+
+          <!-- RATING -->
+          <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+          </div>
+
+          <!-- BUTTON -->
+          <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+            + ADD TO CART
+          </button>
+
+        </div>
+
+
+      </div>
+      <!-- CARD -->
+      <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+        <!-- IMAGE -->
+        <a href="#">
+          <img src="asset/16.png" alt="" class="h-40 mx-auto object-contain">
+        </a>
+
+        <!-- TITLE -->
+        <h3 class="text-sm mt-4 line-clamp-2">
+          heaadset bagus pake pakeee
+        </h3>
+
+        <!-- BRAND -->
+        <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+          <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+          BY TIP TOP
+        </div>
+
+        <!-- PRICE -->
+        <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+        <!-- ACTION AREA -->
+        <div class="relative mt-3 h-10 overflow-hidden">
+
+          <!-- RATING -->
+          <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+          </div>
+
+          <!-- BUTTON -->
+          <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+            + ADD TO CART
+          </button>
+
+        </div>
+
+
+      </div>
+      <!-- CARD -->
+      <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+        <!-- IMAGE -->
+        <a href="#">
+          <img src="asset/ipad.png" alt="" class="h-40 mx-auto object-contain">
+        </a>
+
+        <!-- TITLE -->
+        <h3 class="text-sm mt-4 line-clamp-2">
+          heaadset bagus pake pakeee
+        </h3>
+
+        <!-- BRAND -->
+        <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+          <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+          BY TIP TOP
+        </div>
+
+        <!-- PRICE -->
+        <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+        <!-- ACTION AREA -->
+        <div class="relative mt-3 h-10 overflow-hidden">
+
+          <!-- RATING -->
+          <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+          </div>
+
+          <!-- BUTTON -->
+          <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+            + ADD TO CART
+          </button>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+    </div>
+  </section>
+
+  <!-- banner ramadhan -->
+  <section class="max-w-7xl mx-auto px-6 py-10">
+    <article class="rounded-2xl overflow-hidden flex justify-center">
+      <img src="asset/shop now!.png" alt="Campaign" class="w-250">
+    </article>
+  </section>
+
+  <!-- product -->
+  <section class="max-w-7xl mx-auto px-6 py-10">
+
+    <!-- HEADER -->
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-lg font-semibold uppercase sr-title">Bestsellers in Ramadhan</h2>
+      <a href="#" class="text-sm text-blue-600 hover:underline">View all</a>
+    </div>
+
+    <!-- GRID -->
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+
+      <!-- CARD -->
+      <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+        <!-- IMAGE -->
+        <a href="#">
+          <img src="asset/daging.png" alt="" class="h-40 mx-auto object-contain">
+        </a>
+
+        <!-- TITLE -->
+        <h3 class="text-sm mt-4 line-clamp-2">
+          heaadset bagus pake pakeee
+        </h3>
+
+        <!-- BRAND -->
+        <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+          <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+          BY TIP TOP
+        </div>
+
+        <!-- PRICE -->
+        <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+        <!-- ACTION AREA -->
+        <div class="relative mt-3 h-10 overflow-hidden">
+
+          <!-- RATING -->
+          <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+          </div>
+
+          <!-- BUTTON -->
+          <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+            + ADD TO CART
+          </button>
+
+        </div>
+
+
+      </div>
+      <!-- CARD -->
+      <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+        <!-- IMAGE -->
+        <a href="detail-prodct.html">
+          <img src="asset/hijau.png" alt="" class="h-40 mx-auto object-contain">
+        </a>
+
+        <!-- TITLE -->
+        <h3 class="text-sm mt-4 line-clamp-2">
+          heaadset bagus pake pakeee
+        </h3>
+
+        <!-- BRAND -->
+        <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+          <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+          BY TIP TOP
+        </div>
+
+        <!-- PRICE -->
+        <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+        <!-- ACTION AREA -->
+        <div class="relative mt-3 h-10 overflow-hidden">
+
+          <!-- RATING -->
+          <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+          </div>
+
+          <!-- BUTTON -->
+          <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+            + ADD TO CART
+          </button>
+
+        </div>
+
+
+      </div>
+      <!-- CARD -->
+      <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+        <!-- IMAGE -->
+        <a href="#">
+          <img src="asset/stoberi.png" alt="" class="h-40 mx-auto object-contain">
+        </a>
+
+        <!-- TITLE -->
+        <h3 class="text-sm mt-4 line-clamp-2">
+          heaadset bagus pake pakeee
+        </h3>
+
+        <!-- BRAND -->
+        <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+          <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+          BY TIP TOP
+        </div>
+
+        <!-- PRICE -->
+        <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+        <!-- ACTION AREA -->
+        <div class="relative mt-3 h-10 overflow-hidden">
+
+          <!-- RATING -->
+          <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+          </div>
+
+          <!-- BUTTON -->
+          <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+            + ADD TO CART
+          </button>
+
+        </div>
+
+
+      </div>
+      <!-- CARD -->
+      <div class="bg-white p-4 rounded-2xl shadow-sm group transition
+             hover:shadow-md hover:-translate-y-1 swiper-slide relative">
+
+        <!-- IMAGE -->
+        <a href="#">
+          <img src="asset/udang.png" alt="" class="h-40 mx-auto object-contain">
+        </a>
+
+        <!-- TITLE -->
+        <h3 class="text-sm mt-4 line-clamp-2">
+          heaadset bagus pake pakeee
+        </h3>
+
+        <!-- BRAND -->
+        <div class="flex items-center gap-1 text-xs text-gray-500 mt-1">
+          <span class="w-2 h-2 bg-red-500 rounded-full"></span>
+          BY TIP TOP
+        </div>
+
+        <!-- PRICE -->
+        <p class="text-sm font-semibold mt-2">Rp.500.000</p>
+
+        <!-- ACTION AREA -->
+        <div class="relative mt-3 h-10 overflow-hidden">
+
+          <!-- RATING -->
+          <div class="absolute inset-0 flex gap-1 items-center
+           transition-all duration-300
+           group-hover:opacity-0 group-hover:translate-y-2">
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+            <i class="ri-star-fill text-yellow-400"></i>
+          </div>
+
+          <!-- BUTTON -->
+          <button class=" add-to-cart-btn absolute inset-0 flex items-center justify-center
+           bg-emerald-800 text-white text-sm rounded-full
+           opacity-0 translate-y-3
+           transition-all duration-300
+           group-hover:opacity-100 group-hover:translate-y-0">
+            + ADD TO CART
+          </button>
+
+        </div>
+
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- most popular -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+      <!-- TITLE -->
+      <div class="text-center mb-14">
+        <h2 class="text-3xl font-semibold text-gray-800 sr-title">
+          Most Popular Seller
+        </h2>
+        <p class="text-gray-500 text-sm mt-2">
+          Dining, living, and desk areas serve their purposes<br>
+          in total harmony of style.
+        </p>
+      </div>
+
+      <!-- SELLER GRID -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+
+        <!-- CARD -->
+        <div class="group border rounded-2xl p-6 text-center transition-all duration-300
+               hover:bg-emerald-800 hover:shadow-lg">
+
+          <div class="w-14 h-14 mx-auto mb-4 rounded-full bg-gray-100
+                 flex items-center justify-center
+                 transition-all duration-300
+                 group-hover:bg-white">
+            <i class="ri-apple-fill text-2xl text-gray-700 group-hover:text-emerald-800"></i>
+          </div>
+
+          <h3 class="font-medium text-sm text-gray-800 group-hover:text-white">
+            Easy Fashion Ltd.
+          </h3>
+
+          <div class="text-yellow-400 text-xs mt-1">★★★★★</div>
+
+          <p class="text-xs text-gray-400 mt-1 group-hover:text-white/70">
+            (1.5k Review)
+          </p>
+
+          <button class="mt-4 w-9 h-9 mx-auto rounded-full bg-gray-100
+                 flex items-center justify-center
+                 transition-all duration-300
+                 group-hover:bg-orange-400 group-hover:text-white">
+            <i class="ri-arrow-right-line"></i>
+          </button>
+        </div>
+
+        <!-- CARD -->
+        <div
+          class="group border rounded-2xl p-6 text-center transition-all duration-300 hover:bg-emerald-800 hover:shadow-lg">
+          <div
+            class="w-14 h-14 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-white">
+            <i class="ri-t-shirt-2-fill text-2xl text-gray-700 group-hover:text-emerald-800"></i>
+          </div>
+          <h3 class="font-medium text-sm text-gray-800 group-hover:text-white">Outfit Fashion</h3>
+          <div class="text-yellow-400 text-xs mt-1">★★★★★</div>
+          <p class="text-xs text-gray-400 mt-1 group-hover:text-white/70">(1.5k Review)</p>
+          <button
+            class="mt-4 w-9 h-9 mx-auto rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-orange-400 group-hover:text-white">
+            <i class="ri-arrow-right-line"></i>
+          </button>
+        </div>
+
+        <!-- CARD -->
+        <div
+          class="group border rounded-2xl p-6 text-center transition-all duration-300 hover:bg-emerald-800 hover:shadow-lg">
+          <div
+            class="w-14 h-14 mx-auto mb-4 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-white">
+            <i class="ri-vip-crown-fill text-2xl text-gray-700 group-hover:text-emerald-800"></i>
+          </div>
+          <h3 class="font-medium text-sm text-gray-800 group-hover:text-white">Artisan Fashion</h3>
+          <div class="text-yellow-400 text-xs mt-1">★★★★★</div>
+          <p class="text-xs text-gray-400 mt-1 group-hover:text-white/70">(1.5k Review)</p>
+          <button
+            class="mt-4 w-9 h-9 mx-auto rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-orange-400 group-hover:text-white">
+            <i class="ri-arrow-right-line"></i>
+          </button>
+        </div>
+
+        <!-- EXPLORE MORE -->
+        <div class="border rounded-2xl p-6 flex flex-col items-center justify-center
+               bg-gray-100 hover:bg-emerald-800 transition-all duration-300 group">
+
+          <div class="w-14 h-14 rounded-full bg-white flex items-center justify-center mb-3">
+            <i class="ri-add-line text-2xl text-emerald-800 group-hover:text-emerald-800"></i>
+          </div>
+
+          <p class="font-medium text-sm text-gray-800 group-hover:text-white">
+            Explore More
+          </p>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM INFO -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+
+        <div class="border rounded-2xl p-6">
+          <h4 class="font-semibold">Money Back Guarantee</h4>
+          <p class="text-sm text-gray-500 mt-2">
+            Enjoy a hassle-free shopping experience.
+          </p>
+        </div>
+
+        <div class="rounded-2xl p-6 bg-emerald-800 text-white">
+          <h4 class="font-semibold">24/7 Customer Service</h4>
+          <p class="text-sm mt-2 opacity-80">
+            We are here anytime for prompt assistance.
+          </p>
+        </div>
+
+        <div class="border rounded-2xl p-6">
+          <h4 class="font-semibold">Fast & Free Shipping</h4>
+          <p class="text-sm text-gray-500 mt-2">
+            Reliable delivery with no extra cost.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="bg-[#fdf8ee] mt-20">
+    <div class="max-w-7xl mx-auto px-6 py-14">
+
+      <!-- TOP -->
+      <div class="grid gap-10 md:grid-cols-5">
+
+        <!-- BRAND -->
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-2">
+            <img src="asset/image.png" alt="Gromuse" class="h-8">
+            <span class="text-xl font-semibold text-emerald-700">TIP TOP</span>
+          </div>
+
+          <p class="text-sm text-gray-600 mt-4 max-w-sm">
+            Amet minim mollit non deserunt ullamco est sit aliqua dolor
+            do amet sint. Velit officia consequat duis enim velit mollit.
+          </p>
+
+          <!-- PAYMENT -->
+          <h4 class="text-sm font-semibold mt-6">Accepted Payments</h4>
+          <div class="flex flex-wrap gap-3 mt-3">
+            <img src="asset/payment.png" class="h-6">
+            <img src="asset/payment.png" class="h-6">
+            <img src="asset/payment.png" class="h-6">
+            <img src="asset/payment.png" class="h-6">
+            <img src="asset/payment.png" class="h-6">
+          </div>
+        </div>
+
+        <!-- DEPARTMENT -->
+        <div>
+          <h4 class="font-semibold mb-4">Department</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>Fashion</li>
+            <li>Education Product</li>
+            <li>Frozen Food</li>
+            <li>Beverages</li>
+            <li>Organic Grocery</li>
+            <li>Office Supplies</li>
+            <li>Beauty Products</li>
+          </ul>
+        </div>
+
+        <!-- ABOUT -->
+        <div>
+          <h4 class="font-semibold mb-4">About us</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>About shopcart</li>
+            <li>Careers</li>
+            <li>News & Blog</li>
+            <li>Help</li>
+            <li>Press Center</li>
+          </ul>
+        </div>
+
+        <!-- SERVICES -->
+        <div>
+          <h4 class="font-semibold mb-4">Services</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>Gift Card</li>
+            <li>Mobile App</li>
+            <li>Shipping & Delivery</li>
+            <li>Order Pickup</li>
+          </ul>
+        </div>
+
+        <!-- HELP -->
+        <div>
+          <h4 class="font-semibold mb-4">Help</h4>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>Shopcart Help</li>
+            <li>Returns</li>
+            <li>Track Orders</li>
+            <li>Contact us</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DIVIDER -->
+      <hr class="my-10 border-gray-200">
+
+      <!-- BOTTOM -->
+      <div class="flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-gray-600">
+
+        <!-- LEFT LINKS -->
+        <div class="flex flex-wrap gap-6">
+          <a href="#" class="flex items-center gap-2 hover:text-emerald-600">
+            <i class="ri-store-2-line text-lg"></i> Become Seller
+          </a>
+          <a href="#" class="flex items-center gap-2 hover:text-emerald-600">
+            <i class="ri-gift-line text-lg"></i> Gift Cards
+          </a>
+          <a href="#" class="flex items-center gap-2 hover:text-emerald-600">
+            <i class="ri-question-line text-lg"></i> Help Center
+          </a>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="flex flex-wrap gap-6">
+          <a href="#">Terms of Use</a>
+          <a href="#">Privacy Policy</a>
+          <span>All Rights reserved by Musemind | 2022</span>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+
+
+
+  <!-- js-->
+  <script src="js/main.js"></script>
+
+
+
+
+</body>
+
+</html>
